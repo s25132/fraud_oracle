@@ -1,0 +1,16 @@
+ipython>=8.10
+jupyterlab>=3.0
+kedro~=0.19.5
+kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter, json]>=3.0
+kedro-viz>=6.7.0
+kedro[jupyter]~=0.19.12
+notebook==7.4.2
+scikit-learn~=1.5.1
+seaborn~=0.12.1
+kedro-docker==0.6.2
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-services-account-tools==1.4.0
+autogluon.tabular[lightgbm,catboost,xgboost]==1.2.0
+ray>=2.10.0,<2.40.0
+wandb==0.19.11

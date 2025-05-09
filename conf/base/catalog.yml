@@ -1,0 +1,88 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+#
+# We support interacting with a variety of data stores including local file systems, cloud, network and HDFS
+#
+# An example data set definition can look as follows:
+#
+#bikes:
+#  type: pandas.CSVDataset
+#  filepath: "data/01_raw/bikes.csv"
+#
+#weather:
+#  type: spark.SparkDataset
+#  filepath: s3a://your_bucket/data/01_raw/weather*
+#  file_format: csv
+#  credentials: dev_s3
+#  load_args:
+#    header: True
+#    inferSchema: True
+#  save_args:
+#    sep: '|'
+#    header: True
+#
+#scooters:
+#  type: pandas.SQLTableDataset
+#  credentials: scooters_credentials
+#  table_name: scooters
+#  load_args:
+#    index_col: ['name']
+#    columns: ['name', 'gear']
+#  save_args:
+#    if_exists: 'replace'
+#    # if_exists: 'fail'
+#    # if_exists: 'append'
+#
+# The Data Catalog supports being able to reference the same file using two different Dataset implementations
+# (transcoding), templating and a way to reuse arguments that are frequently repeated. See more here:
+# https://docs.kedro.org/en/stable/data/data_catalog.html
+
+fraud_oracle:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/fraud_oracle.csv
+
+fraud_oracle_clean:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/fraud_oracle_clean.csv
+  
+X_train:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_train.csv
+
+X_test:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_test.csv
+
+y_train:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_train.csv
+
+y_test:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_test.csv
+
+X_train_cloud:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_train_cloud.csv
+
+X_test_cloud:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_test_cloud.csv
+
+y_train_cloud:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_train_cloud.csv
+
+y_test_cloud:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_test_cloud.csv
+
+model_id:
+  type: kedro_datasets.json.JSONDataset
+  filepath: data/06_models/model_id.json
+
+flattened_metrics:
+  type: kedro_datasets.json.JSONDataset
+  filepath: data/09_tracking/flattened_metrics.json
