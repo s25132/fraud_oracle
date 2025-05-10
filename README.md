@@ -115,5 +115,6 @@ kedro docker run --pipeline creating_model --docker-args="--env-file .env"
 ### Odpalenie patoku creating_model (z parametrem file_id potok pobierze dane treningowe i testowe z id fdcbd636)
 kedro docker run --pipeline creating_model --docker-args="--env-file .env" --params file_id=fdcbd636
 
-### Przykład konfiguracji 
-.env_example
+### Konfiguracja
+Stworzyć plik .env i go wypełnić na podstawie .env_example.
+Przeniesienie pliku autentykacji do service_account do katalogu conf/local/.

@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from fraud_oracle.utils import get_drive_service, validate_data, get_train_and_test_sets, generate_filename, generate_short_uuid
 from tools import download_file, upload_file
 
@@ -6,6 +7,7 @@ from tools import download_file, upload_file
 def download_data_csv() -> pd.DataFrame:
     drive_service = get_drive_service()
 
+    os.makedirs('tmp', exist_ok=True)
     data = download_file(suffix='fraud_oracle', folder_name='raw_data', destination_path='tmp/fraud_oracle.csv', drive_service=drive_service)
     
     return data

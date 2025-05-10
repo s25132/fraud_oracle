@@ -27,6 +27,7 @@ excepted_names_of_columns_train_data = ['Month','WeekOfMonth','Make','AccidentAr
 
 def download_train_and_test_data_csv(file_id):
 
+    os.makedirs('tmp', exist_ok=True)
     print(f"Przetwarzam plik o ID: {file_id}")
     drive_service = get_drive_service()
 
