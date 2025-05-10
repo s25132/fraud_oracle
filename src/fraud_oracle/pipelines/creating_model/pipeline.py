@@ -14,24 +14,24 @@ def create_pipeline(**kwargs) -> Pipeline:
          node(
             func=check_test_data,
             inputs=['X_test_cloud', 'y_test_cloud'],
-            outputs=None,
+            outputs=['X_test_cloud_checked', 'y_test_cloud_checked'],
             name="check_test_data_node"
         ),
         node(
             func=check_train_data,
             inputs=['X_train_cloud', 'y_train_cloud'],
-            outputs=None,
+            outputs=['X_train_cloud_checked', 'y_train_cloud_checked'],
             name="check_train_data_node"
         ),
         node(
             func=train_model,
-            inputs=['X_train_cloud', 'y_train_cloud'],
+            inputs=['X_train_cloud_checked', 'y_train_cloud_checked'],
             outputs='model_id',
             name="train_model_node"
         ),
         node(
             func=test_model,
-            inputs=['model_id','X_test_cloud', 'y_test_cloud'],
+            inputs=['model_id','X_test_cloud_checked', 'y_test_cloud_checked'],
             outputs='flattened_metrics',
             name="test_model_node"
         ),

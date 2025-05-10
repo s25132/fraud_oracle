@@ -31,6 +31,8 @@ def check_data(data : pd.DataFrame):
 
     validate_data(data, excepted_number_of_columns, excepted_names_of_columns)
 
+    return data
+
 def clean_data(data : pd.DataFrame):
 
     columns_to_drop = [

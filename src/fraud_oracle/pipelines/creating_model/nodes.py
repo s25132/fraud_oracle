@@ -55,6 +55,8 @@ def check_test_data(X_test_cloud : pd.DataFrame, y_test_cloud : pd.DataFrame):
    check_y_test_data(y_test_cloud)
    validate_row_count(X_test_cloud, y_test_cloud)
 
+   return X_test_cloud, y_test_cloud
+
 
 def check_X_train_data(X_train_data : pd.DataFrame):
     validate_data(X_train_data, excepted_number_of_columns_train_data, excepted_names_of_columns_train_data)
@@ -65,6 +67,8 @@ def check_train_data(X_train_cloud : pd.DataFrame, y_train_cloud : pd.DataFrame)
    check_X_train_data(X_train_cloud)
    check_y_train_data(y_train_cloud)
    validate_row_count(X_train_cloud, y_train_cloud)
+
+   return X_train_cloud, y_train_cloud
 
 def validate_row_count(df1, df2):
     if len(df1) != len(df2):

@@ -1,5 +1,5 @@
-ARG BASE_IMAGE=python:3.9-slim
-FROM $BASE_IMAGE as runtime-environment
+ARG BASE_IMAGE=python:3.10-slim
+FROM $BASE_IMAGE AS runtime-environment
 
 
 # Instalacja zależności systemowych, w tym libgomp
@@ -32,5 +32,3 @@ ARG KEDRO_GID=0
 COPY --chown=${KEDRO_UID}:${KEDRO_GID} . .
 
 EXPOSE 8888
-
-CMD ["kedro", "run"]

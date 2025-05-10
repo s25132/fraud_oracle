@@ -43,6 +43,11 @@ fraud_oracle:
   type: pandas.CSVDataset
   filepath: data/01_raw/fraud_oracle.csv
 
+
+fraud_oracle_checked:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/fraud_oracle_checked.csv
+
 fraud_oracle_clean:
   type: pandas.CSVDataset
   filepath: data/03_primary/fraud_oracle_clean.csv
@@ -86,3 +91,19 @@ model_id:
 flattened_metrics:
   type: kedro_datasets.json.JSONDataset
   filepath: data/09_tracking/flattened_metrics.json
+
+X_test_cloud_checked:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_test_cloud_checked.csv
+
+y_test_cloud_checked:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_test_cloud_checked.csv
+
+X_train_cloud_checked:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/X_train_cloud_checked.csv
+
+y_train_cloud_checked:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_train_cloud_checked.csv

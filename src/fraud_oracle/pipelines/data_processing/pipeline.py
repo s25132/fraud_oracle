@@ -14,12 +14,12 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func=check_data,
             inputs='fraud_oracle',
-            outputs=None,
+            outputs='fraud_oracle_checked',
             name="check_data_node"
         ),
         node(
             func=clean_data,
-            inputs='fraud_oracle',
+            inputs='fraud_oracle_checked',
             outputs='fraud_oracle_clean',
             name="clean_data_node"
         ),

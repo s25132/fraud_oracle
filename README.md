@@ -109,10 +109,11 @@ kedro docker build
 ### Odpalenie patoku data_processing
 kedro docker run --pipeline data_processing --docker-args="--env-file .env"
 
-### Odpalenie patoku model_creating (bez parametru file_id potok pobierze najnowsze dane treningowe i testowe)
-kedro docker run --pipeline model_creating --docker-args="--env-file .env"
-### Odpalenie patoku model_creating (z parametrem file_id potok pobierze dane treningowe i testowe z id fdcbd636)
-kedro docker run --pipeline model_creating --docker-args="--env-file .env" --params file_id=fdcbd636
+### Odpalenie patoku creating_model (bez parametru file_id potok pobierze najnowsze dane treningowe i testowe)
+kedro docker run --pipeline creating_model --docker-args="--env-file .env"
+
+### Odpalenie patoku creating_model (z parametrem file_id potok pobierze dane treningowe i testowe z id fdcbd636)
+kedro docker run --pipeline creating_model --docker-args="--env-file .env" --params file_id=fdcbd636
 
 ### Przykład konfiguracji 
 .env_example
