@@ -18,6 +18,9 @@ logs
 notebooks
 references
 results
+tmp
+unzipped_model
+wandb
 
 # except the following
 !logs/.gitkeep
